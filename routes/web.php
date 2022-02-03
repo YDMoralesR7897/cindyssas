@@ -27,7 +27,8 @@ Route::post('/event/add', [App\Http\Controllers\EventoController::class, 'store'
 
 Route::post('/event/edit/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
 
-Route::post('/event/delete/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
+Route::post('/event/update/{event}', [App\Http\Controllers\EventoController::class, 'update']);
 
+Route::post('/event/delete/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

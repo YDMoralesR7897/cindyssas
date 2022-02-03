@@ -69,6 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
       sendData("http://127.0.0.1:8000/event/delete/"+form.id.value);
 
     });
+    document.getElementById("btnModificar").addEventListener("click",function(){
+
+      sendData("http://127.0.0.1:8000/event/delete/"+form.id.value);
+
+    });
+
     
     const sendData = (url) => {
       

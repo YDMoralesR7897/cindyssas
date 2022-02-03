@@ -16,8 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,listWeek'
       },
-      
+      events:"http://127.0.0.1:8000/event/show",
       dateClick:function(info){
+        form.reset();
+        form.start.value = info.dateStr;
+        form.end.value = info.dateStr;
         $("#eventModal").modal('show');
       }
     });
@@ -32,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
       axios.post("http://127.0.0.1:8000/event/add", data).
       then(
         function (response) {
+          calendar.refetchEvents();
           $("#eventModal").modal("hide");
         }
         ).catch(

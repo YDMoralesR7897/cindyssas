@@ -22,6 +22,34 @@ document.addEventListener('DOMContentLoaded', function() {
         form.start.value = info.dateStr;
         form.end.value = info.dateStr;
         $("#eventModal").modal('show');
+      },
+      eventClick: function(info){
+        
+        let event = info.event;
+        console.log(event)
+        axios.post("http://127.0.0.1:8000/event/edit/"+info.event.id).
+      then(
+        function (response) {
+          form.id.value = response.data.id;
+
+          form.title.value = response.data.title;
+
+          form.description.value = response.data.description;
+
+          form.start.value = response.data.start;
+
+          form.end.value = response.data.end;
+
+          $("#eventModal").modal("show");
+        }
+        ).catch(
+          error=>{
+            if(error.response){
+              console.log(error.response.data)
+            }
+          }
+        )
+
       }
     });
 

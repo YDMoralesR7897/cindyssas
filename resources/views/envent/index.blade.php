@@ -38,17 +38,17 @@
                       <small id="helpId" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
-                      <label for="description">Descripcion</label>
+                      <label for="description">Descripción</label>
                       <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                      <label for="start">Start</label>
-                      <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
+                      <label for="start">Comienza</label>
+                      <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
                       <small id="helpId" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
-                      <label for="end">End</label>
-                      <input type="text" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
+                      <label for="end">Termina</label>
+                      <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
                       <small id="helpId" class="form-text text-muted"></small>
                     </div>
                 </form>

@@ -25,4 +25,6 @@ Route::get('/event/show', [App\Http\Controllers\EventoController::class, 'show']
 
 Route::post('/event/add', [App\Http\Controllers\EventoController::class, 'store']);
 
+Route::post('/event/edit/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

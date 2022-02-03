@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let event = info.event;
         console.log(event)
+
+      //recuperamos datos para edicion
         axios.post("http://127.0.0.1:8000/event/edit/"+info.event.id).
       then(
         function (response) {
@@ -58,9 +60,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Agarramos los datos al hacer click en el boton guardar
     document.getElementById("btnGuardar").addEventListener("click",function(){
+      
+      sendData("http://127.0.0.1:8000/event/add");
+
+    })
+    document.getElementById("btnEliminar").addEventListener("click",function(){
+
+      sendData("http://127.0.0.1:8000/event/delete/"+form.id.value);
+
+    });
+    
+    const sendData = (url) => {
+      
       const data = new FormData(form);
 
-      axios.post("http://127.0.0.1:8000/event/add", data).
+    //se envian los datos a la ruta para ser almacenados en DB
+      axios.post(url, data).
       then(
         function (response) {
           calendar.refetchEvents();
@@ -73,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           }
         )
-    })
+
+    }
 
   });

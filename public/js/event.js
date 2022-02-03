@@ -28,5 +28,19 @@ document.addEventListener('DOMContentLoaded', function() {
     //Agarramos los datos al hacer click en el boton guardar
     document.getElementById("btnGuardar").addEventListener("click",function(){
       const data = new FormData(form);
+
+      axios.post("http://127.0.0.1:8000/event/add", data).
+      then(
+        function (response) {
+          $("#eventModal").modal("hide");
+        }
+        ).catch(
+          error=>{
+            if(error.response){
+              console.log(error.response.data)
+            }
+          }
+        )
     })
+
   });

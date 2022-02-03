@@ -26,6 +26,7 @@
             <div class="modal-body">
                 
                 <form action="">
+                    {!! csrf_field() !!}
                     <div class="form-group">
                       <label for="id">ID</label>
                       <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">

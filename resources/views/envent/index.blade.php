@@ -29,12 +29,12 @@
                     <div class="form-group">
                       <label for="id">ID</label>
                       <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
-                      <small id="helpId" class="form-text text-muted">Help text</small>
+                      <small id="helpId" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
                       <label for="title">Nombre del evento</label>
                       <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Escribe el nombre del evento">
-                      <small id="helpId" class="form-text text-muted">Help text</small>
+                      <small id="helpId" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
                       <label for="descripcion">Descripcion</label>
@@ -43,19 +43,22 @@
                     <div class="form-group">
                       <label for="start">Start</label>
                       <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
-                      <small id="helpId" class="form-text text-muted">Help text</small>
+                      <small id="helpId" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
                       <label for="end">End</label>
                       <input type="text" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
-                      <small id="helpId" class="form-text text-muted">Help text</small>
+                      <small id="helpId" class="form-text text-muted"></small>
                     </div>
                 </form>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button>
+                <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button>
+                <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                
             </div>
         </div>
     </div>

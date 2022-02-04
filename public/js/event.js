@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       locale: 'es',
+      displayEventTime: false,
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,listWeek'
       },
-      events:"http://127.0.0.1:8000/event/show",
+      events:`${baseURL}/event/show`,
       dateClick:function(info){
         form.reset();
         form.start.value = info.dateStr;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(event)
 
       //recuperamos datos para edicion
-        axios.post("http://127.0.0.1:8000/event/edit/"+info.event.id).
+        axios.post(`${baseURL}/event/edit/${info.event.id}`).
       then(
         function (response) {
           form.id.value = response.data.id;
@@ -61,17 +61,17 @@ document.addEventListener('DOMContentLoaded', function() {
     //Agarramos los datos al hacer click en el boton guardar
     document.getElementById("btnGuardar").addEventListener("click",function(){
       
-      sendData("http://127.0.0.1:8000/event/add");
+      sendData("/event/add");
 
     })
     document.getElementById("btnEliminar").addEventListener("click",function(){
 
-      sendData("http://127.0.0.1:8000/event/delete/"+form.id.value);
+      sendData("/event/delete/"+form.id.value);
 
     });
     document.getElementById("btnModificar").addEventListener("click",function(){
 
-      sendData("http://127.0.0.1:8000/event/delete/"+form.id.value);
+      sendData("/event/update/"+form.id.value);
 
     });
 
@@ -80,8 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const data = new FormData(form);
 
+      const newUrl = baseURL+url
+
     //se envian los datos a la ruta para ser almacenados en DB
-      axios.post(url, data).
+      axios.post(newUrl, data).
       then(
         function (response) {
           calendar.refetchEvents();

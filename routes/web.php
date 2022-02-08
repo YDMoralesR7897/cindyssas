@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+
+    return view('event.index');
+
+})->middleware("auth");
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function() {
+
 Route::get('/event', [App\Http\Controllers\EventoController::class, 'index']);
 
-Route::get('/event/show', [App\Http\Controllers\EventoController::class, 'show']);
+Route::post('/event/show', [App\Http\Controllers\EventoController::class, 'show']);
 
 Route::post('/event/add', [App\Http\Controllers\EventoController::class, 'store']);
 
@@ -32,3 +37,5 @@ Route::post('/event/update/{evento}', [App\Http\Controllers\EventoController::cl
 Route::post('/event/delete/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+});

@@ -20,7 +20,7 @@
             </div>
             <div class="modal-body">
                 
-                <form action="">
+                <form action="" id="EventsForm">
                     {!! csrf_field() !!}
                     <div class="form-group d-none">
                       <label for="id">ID</label>

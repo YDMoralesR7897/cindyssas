@@ -10,6 +10,7 @@ class Evento extends Model
     use HasFactory;
 
     static $rules=[
+        'eventName',
         'title'=>'required',
         'description'=>'required',
         'start'=>'required',
@@ -17,6 +18,7 @@ class Evento extends Model
     ];
 
     protected $fillable = [
+        'eventName',
         'title',
         'description',
         'start',

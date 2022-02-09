@@ -13,10 +13,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Informacion del evento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <h5 class="modal-title">Informacion del evento - CINDY S.A.S</h5>
+
             </div>
             <div class="modal-body">
                 
@@ -28,8 +26,13 @@
                       <small id="helpId" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
-                      <label for="title">Nombre del evento</label>
-                      <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Escribe el nombre del evento">
+                      <label for="title">Salon de eventos</label>
+                      <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Escribe el nombre del Salon">
+                      <small id="helpId" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                      <label for="eventName">Nombre del evento</label>
+                      <input type="text" class="form-control" name="eventName" id="eventName" aria-describedby="helpId" placeholder="Escribe el nombre del evento">
                       <small id="helpId" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
@@ -53,11 +56,8 @@
                 <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button>
                 <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button>
                 <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                
             </div>
         </div>
     </div>
 </div>
-
 @endsection

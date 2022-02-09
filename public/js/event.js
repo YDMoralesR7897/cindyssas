@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
+        right: 'dayGridMonth,timeGridWeek,listWeek'
       },
       events:`${baseURL}/event/show`,
       dateClick:function(info){
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
           form.id.value = response.data.id;
 
           form.title.value = response.data.title;
+
+          form.eventName.value = response.data.eventName;
 
           form.description.value = response.data.description;
 

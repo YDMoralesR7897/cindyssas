@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::get('/event', [App\Http\Controllers\EventoController::class, 'index']);
 
-Route::post('/event/show', [App\Http\Controllers\EventoController::class, 'show']);
+Route::get('/event/show', [App\Http\Controllers\EventoController::class, 'show']);
 
 Route::post('/event/add', [App\Http\Controllers\EventoController::class, 'store']);
 
